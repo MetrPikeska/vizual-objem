@@ -1,0 +1,27 @@
+======================================================================
+ANALÝZA OBJEMU HORY Z DMR
+======================================================================
+
+METADATA:
+  Rozměry: 312 × 475 pixelů
+  Elevace: 350.79 - 510.33 m
+  Vrchol: (169, 252) → 510.33 m
+
+VÝSLEDKY VÝPOČTU OBJEMU:
+  Přímý součet: 58617568.00 m³ (58.617568 km³)
+  Od úpratoře 400m (QGIS): 5210083.47 m³ (5.210083 km³) ✓ DOPORUČENO
+  Aproximace kuželem: 404401.27 m³ (0.404401 km³)
+  Aproximace paraboloidem: 606601.91 m³ (0.606602 km³)
+  Simpsonův vzorec: 296353.67 m³ (0.296354 km³)
+  Hypsometrická analýza: 6630974.17 m³ (6.630974 km³)
+
+OVĚŘENO V QGIS:
+  Algoritmus: "Objem rastrového povrchu"
+  Referenční hladina: 400 m
+  Počet pixelů > 400m: 37117
+  VOLUME: 5,210,083 m³
+  Shoda s metodou: 100%
+
+DOPORUČENÁ HODNOTA:
+  V = 5,210,083.47 m³ = 5.2101 km³
+  (Objem hory od úpratoře 400m nahoru - ověřeno QGIS)
