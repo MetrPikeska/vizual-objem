@@ -1,1 +1,43 @@
-/.venv
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data files (large)
+data/*.tif
+data/*.tiff
+data/*.aux.xml
+
+# Output files
+output/*.pdf
+output/*.stl
+output/*.ply
+output/*.txt
+output/*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak

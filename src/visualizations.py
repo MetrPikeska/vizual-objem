@@ -3,9 +3,18 @@ from PIL import Image
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.patches as mpatches
+import os
 
 # Načtení dat
-img_path = 'mila.tif'
+# Detekce cesty k datovému souboru
+if os.path.exists('mila.tif'):
+    img_path = 'mila.tif'
+elif os.path.exists('../mila.tif'):
+    img_path = '../mila.tif'
+elif os.path.exists('data/mila.tif'):
+    img_path = 'data/mila.tif'
+else:
+    img_path = 'mila.tif'  # Výchozí cesta
 img = Image.open(img_path)
 elevation_data = np.array(img, dtype=np.float32)
 

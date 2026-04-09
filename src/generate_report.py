@@ -6,8 +6,13 @@ from reportlab.lib import colors
 from datetime import datetime
 import os
 
+# Vytvoření výstupní složky, pokud neexistuje
+output_dir = '../output' if os.path.exists('../output') else 'output' if os.path.exists('output') else '.'
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
 # Název reportu
-report_filename = 'vizul2026_cv4b_report.pdf'
+report_filename = os.path.join(output_dir, 'vizul2026_cv4b_report.pdf')
 doc = SimpleDocTemplate(report_filename, pagesize=A4,
                         rightMargin=1.5*cm, leftMargin=1.5*cm,
                         topMargin=1.5*cm, bottomMargin=1.5*cm)
@@ -50,8 +55,23 @@ body_style = ParagraphStyle(
 )
 
 # Načtení výsledků
-with open('volume_results.txt', 'r', encoding='utf-8') as f:
-    results_text = f.read()
+import os
+if os.path.exists('volume_results.txt'):
+    results_file = 'volume_results.txt'
+elif os.path.exists('../output/volume_results.txt'):
+    results_file = '../output/volume_results.txt'
+else:
+    results_file = 'volume_results.txt'
+
+try:
+    with open(results_file, 'r', encoding='utf-8') as f:
+        results_text = f.read()
+except:
+    results_text = "Výsledky nejsou k dispozici. Spusťte nejdřív generate_report_txt.py."
+
+# Vytvoření výstupní složky, pokud neexistuje
+if not os.path.exists('../output'):
+    os.makedirs('../output')
 
 # Obsah dokumentu
 story = []

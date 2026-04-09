@@ -148,10 +148,15 @@ ZPRACOVÁNO: """ + datetime.now().strftime('%d. %m. %Y v %H:%M:%S') + """
 ================================================================================
 """
 
-# Uložení do odevzdani složky
-output_file = r'c:\Users\admin\Documents\SKOLA_NTB\4_LS\VIZUL\vizual-objem\odevzdani\vizul2026_cv4b_report.txt'
+# Vytvoření výstupní složky, pokud neexistuje
+import os
+if not os.path.exists('../output'):
+    os.makedirs('../output')
+
+# Uložení do output složky
+output_file = '../output/vizul2026_cv4b_report.txt'
 with open(output_file, 'w', encoding='utf-8') as f:
     f.write(report)
 
 print('✓ TXT report vytvořen: vizul2026_cv4b_report.txt')
-print('  Umístění: odevzdani/vizul2026_cv4b_report.txt')
+print('  Umístění: output/vizul2026_cv4b_report.txt')

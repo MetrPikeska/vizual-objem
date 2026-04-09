@@ -1,9 +1,18 @@
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
+import os
 
 # Načtení TIF souboru
-img_path = 'mila.tif'
+# Detekce cesty k datovému souboru
+if os.path.exists('mila.tif'):
+    img_path = 'mila.tif'
+elif os.path.exists('../mila.tif'):
+    img_path = '../mila.tif'
+elif os.path.exists('data/mila.tif'):
+    img_path = 'data/mila.tif'
+else:
+    img_path = 'mila.tif'  # Výchozí cesta
 img = Image.open(img_path)
 
 # Převedení na NumPy array
